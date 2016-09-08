@@ -19,7 +19,6 @@ import org.json.JSONException;
 import java.util.ArrayList;
 
 import evoliris.com.hamid_masterdetails.adapter.AdapterBook;
-import evoliris.com.hamid_masterdetails.dummy.DummyContent;
 import evoliris.com.hamid_masterdetails.model.Book;
 import evoliris.com.hamid_masterdetails.task.AsynctaskShowBooks;
 
@@ -37,12 +36,12 @@ public class ItemListFragment extends ListFragment implements AsynctaskShowBooks
 
 
     public interface Callbacks {
-        public void onItemSelected(String id);
+        public void onItemSelected(long id);
     }
 
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        public void onItemSelected(String id) {
+        public void onItemSelected(long id) {
         }
     };
 
@@ -115,7 +114,8 @@ public class ItemListFragment extends ListFragment implements AsynctaskShowBooks
     @Override
     public void onListItemClick(ListView listView, View view, int position, long id) {
         super.onListItemClick(listView, view, position, id);
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        Book selectedBook = ((AdapterBook)listView.getAdapter()).getItem(position);
+        mCallbacks.onItemSelected(selectedBook.getId());
     }
 
     @Override

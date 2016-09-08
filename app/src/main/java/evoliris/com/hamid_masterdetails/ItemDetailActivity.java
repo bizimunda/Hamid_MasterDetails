@@ -19,8 +19,8 @@ public class ItemDetailActivity extends ActionBarActivity {
         if (savedInstanceState == null) {
 
             Bundle arguments = new Bundle();
-            arguments.putString(ItemDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(ItemDetailFragment.ARG_ITEM_ID));
+            arguments.putLong(ItemDetailFragment.ARG_ITEM_ID,
+                    getIntent().getLongExtra(ItemDetailFragment.ARG_ITEM_ID, 0));
             ItemDetailFragment fragment = new ItemDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()

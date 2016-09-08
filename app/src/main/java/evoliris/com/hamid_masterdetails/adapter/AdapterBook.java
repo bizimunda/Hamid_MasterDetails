@@ -32,7 +32,7 @@ public class AdapterBook extends ArrayAdapter<Book> {
         Book model = getItem(position);
 
         TextView titleTextView = (TextView) listItemView.findViewById(R.id.tv_listItem_title);
-        titleTextView.setText(model.getTitle());
+        titleTextView.setText(String.valueOf(model.getId()));
 
         return listItemView;
     }

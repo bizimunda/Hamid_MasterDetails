@@ -2,6 +2,8 @@ package evoliris.com.hamid_masterdetails.task;
 
 import android.os.AsyncTask;
 
+import org.json.JSONException;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -57,12 +59,16 @@ public class AsynctaskShowOnlyOneBook extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        callback.onPostGetCreateBook(s);
+        try {
+            callback.onPostGetOnlyOneBook(s);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public interface GetAsyncTaskCreateOnlyOneBookCallback {
 
-        void onPostGetCreateBook(String s);
+        void onPostGetOnlyOneBook(String s) throws JSONException;
 
     }
 }

@@ -28,11 +28,11 @@ public class ItemListActivity extends FragmentActivity implements ItemListFragme
     }
 
     @Override
-    public void onItemSelected(String id) {
+    public void onItemSelected(long id) {
         if (mTwoPane) {
 
             Bundle arguments = new Bundle();
-            arguments.putString(ItemDetailFragment.ARG_ITEM_ID, id);
+            arguments.putLong(ItemDetailFragment.ARG_ITEM_ID, id);
             ItemDetailFragment fragment = new ItemDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
