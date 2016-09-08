@@ -1,0 +1,11 @@
+<fragment
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list"
+    android:name="evoliris.com.hamid_masterdetails.ItemListFragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    tools:context="evoliris.com.hamid_masterdetails.ItemListActivity"
+    tools:layout="@android:layout/list_content" />
